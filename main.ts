@@ -3,7 +3,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     Bullet = game.createSprite(Player.get(LedSpriteProperty.X), 3)
-    basic.pause(250)
+    music.playMelody("C5 - - - - - - - ", 500)
     for (let index = 0; index < 5; index++) {
         if (Bullet.isTouching(Enemy)) {
             Enemy.delete()
@@ -17,6 +17,8 @@ input.onButtonPressed(Button.AB, function () {
         } else if (Bullet.isTouching(Bullet_from_enemy)) {
             Bullet_from_enemy.delete()
             Bullet.delete()
+        } else if (Bullet.isDeleted()) {
+            music.stopAllSounds()
         } else {
             Bullet.change(LedSpriteProperty.Y, -1)
             basic.pause(250)
