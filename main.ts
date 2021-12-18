@@ -7,11 +7,12 @@ input.onButtonPressed(Button.AB, function () {
     for (let index = 0; index < 5; index++) {
         if (Bullet.isTouching(Enemy)) {
             Enemy.delete()
+            Bullet_from_enemy.delete()
+            music.playMelody("E G F G A F A G ", 296)
             game.addScore(1)
             Enemy = game.createSprite(0, 0)
             Player.delete()
             Bullet.delete()
-            Bullet_from_enemy.delete()
             Player = game.createSprite(2, 4)
         } else if (Bullet.isTouching(Bullet_from_enemy)) {
             Bullet_from_enemy.delete()
@@ -55,6 +56,8 @@ basic.forever(function () {
                 Bullet_from_enemy.change(LedSpriteProperty.Y, 1)
                 basic.pause(250)
                 if (Bullet_from_enemy.isTouching(Player)) {
+                    music.playMelody("E B C5 A B G A F ", 300)
+                    music.playMelody("E - - - - - - - ", 103)
                     basic.showString("Made by DanielY121")
                     basic.pause(250)
                     game.gameOver()
@@ -83,6 +86,8 @@ basic.forever(function () {
                 Bullet_from_enemy.change(LedSpriteProperty.Y, 1)
                 basic.pause(250)
                 if (Bullet_from_enemy.isTouching(Player)) {
+                    music.playMelody("E B C5 A B G A F ", 300)
+                    music.playMelody("E - - - - - - - ", 103)
                     basic.showString("Made by DanielY121")
                     basic.pause(250)
                     game.gameOver()
