@@ -55,6 +55,8 @@ basic.forever(function () {
                 Bullet_from_enemy.change(LedSpriteProperty.Y, 1)
                 basic.pause(250)
                 if (Bullet_from_enemy.isTouching(Player)) {
+                    basic.showString("Made by DanielY121")
+                    basic.pause(250)
                     game.gameOver()
                 }
             }
@@ -81,6 +83,8 @@ basic.forever(function () {
                 Bullet_from_enemy.change(LedSpriteProperty.Y, 1)
                 basic.pause(250)
                 if (Bullet_from_enemy.isTouching(Player)) {
+                    basic.showString("Made by DanielY121")
+                    basic.pause(250)
                     game.gameOver()
                 }
             }
