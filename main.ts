@@ -1,3 +1,150 @@
+input.onGesture(Gesture.TiltLeft, function () {
+    Enemy.delete()
+    Player.delete()
+    basic.showLeds(`
+        # . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        . . . . .
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        . . . . #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        . . . # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        . . # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        . # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        . . . . #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        . . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # . # #
+        # # # # #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # . # #
+        # # # # #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.clearScreen()
+    Enemy = game.createSprite(0, 0)
+    Player = game.createSprite(2, 4)
+})
 input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
 })
