@@ -141,12 +141,15 @@ input.onGesture(Gesture.TiltLeft, function () {
         # . . . #
         # # # # #
         `)
+    music.playMelody("C5 B A B G B C5 B ", 170)
+    music.playMelody("C5 B A B G B C5 B ", 170)
     basic.clearScreen()
     Enemy = game.createSprite(0, 0)
     Player = game.createSprite(2, 4)
 })
 input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
+    music.playMelody("C5 - - - - - - - ", 500)
 })
 input.onButtonPressed(Button.AB, function () {
     Bullet = game.createSprite(Player.get(LedSpriteProperty.X), 3)
@@ -175,6 +178,7 @@ input.onButtonPressed(Button.AB, function () {
 })
 input.onButtonPressed(Button.B, function () {
     Player.change(LedSpriteProperty.X, 1)
+    music.playMelody("C5 - - - - - - - ", 500)
 })
 let Enemy_speed = 0
 let sprite = 0
