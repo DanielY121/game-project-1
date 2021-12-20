@@ -43,7 +43,6 @@ input.onGesture(Gesture.Shake, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     Bullet = game.createSprite(Player.get(LedSpriteProperty.X), 3)
-    music.playMelody("C5 - - - - - - - ", 500)
     for (let index = 0; index < 5; index++) {
         if (Bullet.isTouching(Enemy)) {
             Enemy.delete()
@@ -59,12 +58,13 @@ input.onButtonPressed(Button.AB, function () {
             Bullet.delete()
         } else if (Bullet.isDeleted()) {
             music.stopAllSounds()
+        } else if (Bullet.isTouchingEdge()) {
+            Bullet.delete()
         } else {
             Bullet.change(LedSpriteProperty.Y, -1)
             basic.pause(250)
         }
     }
-    Bullet.delete()
 })
 input.onButtonPressed(Button.B, function () {
     Player.change(LedSpriteProperty.X, 1)
@@ -109,8 +109,10 @@ basic.forever(function () {
                     basic.pause(250)
                     game.gameOver()
                 }
+                if (Bullet_from_enemy.isTouchingEdge()) {
+                    Bullet_from_enemy.delete()
+                }
             }
-            Bullet_from_enemy.delete()
         }
     }
     for (let index = 0; index < 4; index++) {
@@ -139,8 +141,10 @@ basic.forever(function () {
                     basic.pause(250)
                     game.gameOver()
                 }
+                if (Bullet_from_enemy.isTouchingEdge()) {
+                    Bullet_from_enemy.delete()
+                }
             }
-            Bullet_from_enemy.delete()
         }
     }
 })
