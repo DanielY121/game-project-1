@@ -152,6 +152,49 @@ input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
     music.playMelody("C5 - - - - - - - ", 500)
 })
+input.onGesture(Gesture.Shake, function () {
+    Enemy.delete()
+    Player.delete()
+    for (let index = 0; index < 4; index++) {
+        music.playMelody("A B C5 F A B C5 F ", 300)
+    }
+    for (let index = 0; index < 4; index++) {
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # # . # #
+            # . . . #
+            . # # # .
+            `)
+        basic.pause(50)
+        basic.showLeds(`
+            . # # # .
+            # # . # #
+            # . . . #
+            # . . . #
+            . # # # .
+            `)
+        basic.pause(50)
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # # . # #
+            # . . . #
+            . # # # .
+            `)
+        basic.pause(50)
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # . . . #
+            # # . # #
+            . # # # .
+            `)
+        basic.pause(50)
+    }
+    Enemy = game.createSprite(0, 0)
+    Player = game.createSprite(2, 4)
+})
 input.onButtonPressed(Button.AB, function () {
     Bullet = game.createSprite(Player.get(LedSpriteProperty.X), 3)
     music.playMelody("C5 - - - - - - - ", 500)
@@ -180,6 +223,9 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     Player.change(LedSpriteProperty.X, 1)
     music.playMelody("C5 - - - - - - - ", 500)
+})
+input.onGesture(Gesture.TiltRight, function () {
+    basic.clearScreen()
 })
 let Enemy_speed = 0
 let sprite = 0
