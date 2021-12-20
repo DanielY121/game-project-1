@@ -1,6 +1,7 @@
 input.onGesture(Gesture.TiltLeft, function () {
     Enemy.delete()
     Player.delete()
+    basic.clearScreen()
     basic.showLeds(`
         # . . . .
         . . . . .
@@ -158,12 +159,12 @@ input.onButtonPressed(Button.AB, function () {
         if (Bullet.isTouching(Enemy)) {
             Enemy.delete()
             Bullet_from_enemy.delete()
-            music.playMelody("E G F G A F A G ", 296)
             game.addScore(1)
-            Enemy = game.createSprite(0, 0)
+            music.playMelody("E G F G A F A G ", 296)
             Player.delete()
             Bullet.delete()
             Player = game.createSprite(2, 4)
+            Enemy = game.createSprite(0, 0)
         } else if (Bullet.isTouching(Bullet_from_enemy)) {
             Bullet_from_enemy.delete()
             Bullet.delete()
