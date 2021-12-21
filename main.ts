@@ -57,14 +57,12 @@ input.onButtonPressed(Button.AB, function () {
         } else if (Bullet.isTouching(Bullet_from_enemy)) {
             Bullet_from_enemy.delete()
             Bullet.delete()
-        } else if (Bullet.isDeleted()) {
-            music.stopAllSounds()
         } else {
             Bullet.change(LedSpriteProperty.Y, -1)
             basic.pause(250)
         }
-        Bullet.delete()
     }
+    Bullet.delete()
 })
 input.onButtonPressed(Button.B, function () {
     Player.change(LedSpriteProperty.X, 1)
