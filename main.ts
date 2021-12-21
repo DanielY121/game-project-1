@@ -1,6 +1,3 @@
-input.onPinPressed(TouchPin.P0, function () {
-    music.playMelody("C5 C5 C5 C5 C5 C5 C5 C5 ", 120)
-})
 input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
     music.playMelody("C5 - - - - - - - ", 500)
