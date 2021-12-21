@@ -1,3 +1,30 @@
+input.onGesture(Gesture.TiltLeft, function () {
+    Enemy.delete()
+    Player.delete()
+    music.playMelody("C5 A B G A F G E ", 500)
+    music.playMelody("F G A G C5 E D - ", 500)
+    basic.showLeds(`
+        . . # . #
+        . # # # #
+        # # # # #
+        . # . # .
+        . # # # .
+        `)
+    basic.showLeds(`
+        . . # . .
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    basic.showLeds(`
+        . # . # .
+        . . # . .
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+})
 input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
     music.playMelody("C5 - - - - - - - ", 500)
