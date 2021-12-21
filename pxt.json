@@ -11,7 +11,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "main.py"
+        "main.py",
+        null
     ],
     "testFiles": [
         "test.ts"
