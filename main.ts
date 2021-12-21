@@ -43,6 +43,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     Bullet = game.createSprite(Player.get(LedSpriteProperty.X), 3)
+    basic.pause(100)
     for (let index = 0; index < 5; index++) {
         if (Bullet.isTouching(Enemy)) {
             Enemy.delete()
