@@ -1,3 +1,6 @@
+input.onPinPressed(TouchPin.P0, function () {
+    music.playMelody("C5 C5 C5 C5 C5 C5 C5 C5 ", 120)
+})
 input.onButtonPressed(Button.A, function () {
     Player.change(LedSpriteProperty.X, -1)
     music.playMelody("C5 - - - - - - - ", 500)
@@ -58,12 +61,11 @@ input.onButtonPressed(Button.AB, function () {
             Bullet.delete()
         } else if (Bullet.isDeleted()) {
             music.stopAllSounds()
-        } else if (Bullet.isTouchingEdge()) {
-            Bullet.delete()
         } else {
             Bullet.change(LedSpriteProperty.Y, -1)
             basic.pause(250)
         }
+        Bullet.delete()
     }
 })
 input.onButtonPressed(Button.B, function () {
